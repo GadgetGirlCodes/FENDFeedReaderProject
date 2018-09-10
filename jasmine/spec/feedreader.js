@@ -59,6 +59,8 @@ $(function() {
          * hiding/showing of the menu element.
          */
         var menu = document.querySelector('body');
+        var menuIcon = document.querySelector('.menu-icon-link');
+
 
          it('menu hidden default', function() {
             expect(menu.className).toBe('menu-hidden');
@@ -69,15 +71,13 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-          beforeEach(function(done) {
-
-          })
-          
           it('menu visibility changes', function(){
-            expect(menu.className.onClick).toBeUndefined();
-            expect(menu.className.onClick).toBe('menu-hidden');
+            menuIcon.click();
+            expect(menu.className).toBe('');
+            menuIcon.click();
+            expect(menu.className).toBe('menu-hidden');
           })
-    })
+    });
 
 
 
