@@ -26,33 +26,60 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
+        it('URL defined', function() {
+            for (let feed of allFeeds) {
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0);
+            };
+        });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         it('name defined', function() {
+            for (let feed of allFeeds) {
+                expect(feed.name).toBeDefined();
+                expect(feed.name.length).not.toBe(0);
+            }
+         })
     });
 
 
     /* TODO: Write a new test suite named "The menu" */
+    describe('The Menu', function() {
 
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+        var menu = document.querySelector('body');
+
+         it('menu hidden default', function() {
+            expect(menu.className).toBe('menu-hidden');
+         })
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          beforeEach(function(done) {
+
+          })
+          
+          it('menu visibility changes', function(){
+            expect(menu.className.onClick).toBeUndefined();
+            expect(menu.className.onClick).toBe('menu-hidden');
+          })
+    })
+
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
