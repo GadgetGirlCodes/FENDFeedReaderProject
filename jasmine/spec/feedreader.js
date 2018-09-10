@@ -90,10 +90,8 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done) {
-            setTimeout(function() {
-                loadFeed();
-                done();
-            }, 1);
+            loadFeed(0);
+            done();
          })
 
 
