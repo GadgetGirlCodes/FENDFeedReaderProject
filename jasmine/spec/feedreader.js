@@ -45,8 +45,8 @@ $(function() {
             for (let feed of allFeeds) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
-            }
-         })
+            };
+         });
     });
 
 
@@ -64,7 +64,7 @@ $(function() {
 
          it('menu hidden default', function() {
             expect(menu.className).toBe('menu-hidden');
-         })
+         });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -76,7 +76,7 @@ $(function() {
             expect(menu.className).toBe('');
             menuIcon.click();
             expect(menu.className).toBe('menu-hidden');
-          })
+          });
     });
 
 
@@ -92,19 +92,36 @@ $(function() {
          beforeEach(function(done) {
             loadFeed(0);
             done();
-         })
-
+         });
 
          it('loads initial entries', function(done) {
             expect(container.length).not.toBe(0);
             done();
-         })
+         });
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
 
+    /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function() {
+    	let feed = document.querySelector('.feed'),
+    		firstFeed,
+    		secondFeed;
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        beforeEach(function(done) {
+        	loadFeed(0, function() {
+        		firstFeed = feed.innerText;
+        		loadFeed(1, function() {
+        			secondFeed = feed.innerText;
+        			done();
+        		});
+        	});
+        });
+
+        it('changes content', function() {
+        	expect(firstFeed !== secondFeed).toBe(true);
+        });
+     });
 }());
