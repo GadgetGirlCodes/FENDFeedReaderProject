@@ -22,16 +22,16 @@ To implement learned skills in writing and executing a Jasmine test suite.
 
 ## Included Tests
 
-1.  "RSS Feeds"
+1. "RSS Feeds"
 	-"are defined": determines if the `allFeeds` variable has been defined and is not empty. This houses the different feeds on the feed reader.
 	-"URL defined": determines if each feed in the `allFeeds` object has a "URL" value and that value is defined. This houses the links to each feed.
 	-"name defined": determines if each feed in the allFeeds object has a "name" value and that value is defined. This houses the title of each feed link.
-2.  "The Menu"
+2. "The Menu"
 	-"menu hidden default": determines if the navigation menu is hidden upon load of the page.
 	-"menu visibility changes": determines if the navigation menu is shown and hidden when the menu icon is clicked.
-3.  "Initial Entries"
+3. "Initial Entries"
 	-"loads initial entries": this is an asynchronous test that determines if the `loadFeed();` function loads a new `.entry` into the `.feed` section of the page upon initial load of the page.
-4.  "New Feed Selection"
+4. "New Feed Selection"
 	-"changes content": this is an asynchronous test that determines if the `loadFeed();` function loads different information for each `.entry` after the initial load of the page.
 
 ## Attribution
